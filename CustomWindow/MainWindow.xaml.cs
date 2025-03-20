@@ -26,8 +26,6 @@ namespace CustomWindow
 
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-      if (ThemeMode == ThemeMode.Dark)
-      {
         // 获取当前窗口的句柄
         WindowInteropHelper helper = new WindowInteropHelper(this);
         IntPtr hWnd = helper.Handle;
@@ -37,15 +35,12 @@ namespace CustomWindow
         if (success)
         {
           Console.WriteLine("暗黑模式启用成功！");
-          ThemeMode = ThemeMode.Dark;
+          
         }
         else
         {
           Console.WriteLine("暗黑模式启用失败。");
         }
-      }
-
-      
     }
 
     private void Window_StateChanged(object sender, EventArgs e)
@@ -78,6 +73,14 @@ namespace CustomWindow
         WindowState = WindowState.Normal;
       else
         WindowState = WindowState.Maximized;
+    }
+
+    private void Button_Click(object sender, RoutedEventArgs e)
+    {
+      if (ThemeMode != ThemeMode.Dark)
+        ThemeMode = ThemeMode.Dark;
+      else
+        ThemeMode = ThemeMode.Light;
     }
   }
 }
