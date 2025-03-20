@@ -20,14 +20,13 @@ namespace CustomWindow
     public MainWindow()
     {
       InitializeComponent();
-      Chrome.NonClientFrameEdges = System.Windows.Shell.NonClientFrameEdges.Left | System.Windows.Shell.NonClientFrameEdges.Right | System.Windows.Shell.NonClientFrameEdges.Bottom;
       Loaded += MainWindow_Loaded;
     }
-
     private void MainWindow_Loaded(object sender, RoutedEventArgs e)
     {
-        // 获取当前窗口的句柄
-        WindowInteropHelper helper = new WindowInteropHelper(this);
+
+      // 获取当前窗口的句柄
+      WindowInteropHelper helper = new WindowInteropHelper(this);
         IntPtr hWnd = helper.Handle;
 
         // 启用暗黑模式
@@ -43,8 +42,10 @@ namespace CustomWindow
         }
     }
 
-    private void Window_StateChanged(object sender, EventArgs e)
+    protected override void OnStateChanged(EventArgs e)
     {
+      base.OnStateChanged(e);
+
       if (WindowState == WindowState.Maximized)
       {
         Padding = new Thickness(8);
@@ -57,10 +58,7 @@ namespace CustomWindow
       }
     }
 
-    private void Window_Close(object sender, RoutedEventArgs e)
-    {
-      Close();
-    }
+    
 
     private void Window_Min(object sender, RoutedEventArgs e)
     {
@@ -74,6 +72,7 @@ namespace CustomWindow
       else
         WindowState = WindowState.Maximized;
     }
+    private void Window_Close(object sender, RoutedEventArgs e) => Close();
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {

@@ -23,7 +23,6 @@ namespace CustomWindow
     public SecondWindow()
     {
       InitializeComponent();
-      Chrome.NonClientFrameEdges = System.Windows.Shell.NonClientFrameEdges.Left | System.Windows.Shell.NonClientFrameEdges.Right | System.Windows.Shell.NonClientFrameEdges.Bottom;
       Loaded += MainWindow_Loaded;
     }
 

@@ -9,7 +9,6 @@
   Width="800"
   Height="450"
   Padding="4,0,4,4"
-  
   Background="Transparent"
   mc:Ignorable="d">
   <Window.Template>
@@ -26,7 +25,7 @@
     </ControlTemplate>
   </Window.Template>
   <WindowChrome.WindowChrome>
-    <WindowChrome x:Name="Chrome" />
+    <WindowChrome x:Name="Chrome" NonClientFrameEdges="Left,Bottom,Right" />
   </WindowChrome.WindowChrome>
 
 

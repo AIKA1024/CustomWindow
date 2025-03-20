@@ -9,7 +9,7 @@
   Width="800"
   Height="450"
   Padding="4,0,4,4"
-  StateChanged="Window_StateChanged"
+  WindowStyle="ToolWindow"
   mc:Ignorable="d">
   <Window.Template>
     <ControlTemplate TargetType="{x:Type Window}">
@@ -25,7 +25,10 @@
     </ControlTemplate>
   </Window.Template>
   <WindowChrome.WindowChrome>
-    <WindowChrome x:Name="Chrome" UseAeroCaptionButtons="False" />
+    <WindowChrome
+      x:Name="Chrome"
+      NonClientFrameEdges="Left,Bottom,Right"
+      UseAeroCaptionButtons="False" />
   </WindowChrome.WindowChrome>
   <Grid>
     <Grid.RowDefinitions>
@@ -33,6 +36,11 @@
       <RowDefinition />
     </Grid.RowDefinitions>
 
+    <!--<Rectangle
+      Grid.Row="0"
+      Height=".7"
+      VerticalAlignment="Top"
+      Fill="#2C2C2C" />-->
     <Grid Grid.Row="0">
       <Grid.ColumnDefinitions>
         <ColumnDefinition />
