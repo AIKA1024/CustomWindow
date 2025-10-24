@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,14 +35,9 @@ namespace CustomWindow
       // 启用暗黑模式
       bool success = DarkModeHelper.EnableDarkModeForWindow(hWnd, true);
       if (success)
-      {
         Console.WriteLine("暗黑模式启用成功！");
-
-      }
       else
-      {
         Console.WriteLine("暗黑模式启用失败。");
-      }
     }
 
     protected override void OnStateChanged(EventArgs e)
@@ -61,7 +56,8 @@ namespace CustomWindow
 
     private void Button_Click(object sender, RoutedEventArgs e)
     {
-        new MainWindow().Show();
+      //new MainWindow().Show();
+      MessageBox.Show("卢本伟挂壁", "提示",MessageBoxButton.OKCancel,MessageBoxImage.Question);
     }
   }
 }
